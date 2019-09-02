@@ -1,3 +1,14 @@
 	.card-bible{
 		
 	}
+
+	.navbar-bg-l{
+		background-color: #ccffff;
+	}
+
+	.card-bible-gary{
+		border-style: solid;
+		border-color: #d9d9d9;
+		border-width: 2px;
+		border-radius: 5px;
+	}	
