@@ -167,41 +167,48 @@
         function onclickaddbible() {
             // document.getElementById("demo").style.color = "red";
             var numernicid = Math.floor(Math.random() * 1000001);
-            console.log(numernicid)
+            var html = '<div>' ;
 
-            $("#onshowbible").append(`<div class="row" id="('$numernicid')">
-                            <div class="col-lg-2 ">
-                                <div class="form-group">
-                                    <label>หัวข้อพระคัมภีร์</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 ">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option selected>หัวข้อ</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 ">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option selected>บทที่</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 ">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" value="เลขข้อ">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 ">
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-outline-success"><i class="fa fa-floppy-o"></i></button>
-                                </div>
-                            </div>
-                        </div>
+                html += '<div class="row" id=".$numernicid. ">'
+                        +'<div class="col-lg-2 ">'
+                            +'<div class="form-group">'
+                                +'<label>หัวข้อพระคัมภีร์</label>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-3 ">'
+                            +'<div class="form-group">'
+                                +'<select class="form-control">'
+                                    +'<option selected>หัวข้อ</option>'
+                                    +'<option>...</option>'
+                                +'</select>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-2 ">'
+                            +'<div class="form-group">'
+                                +'<select class="form-control">'
+                                    +'<option selected>บทที่</option>'
+                                    +'<option>...</option>'
+                                +'</select>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-2 ">'
+                            +'<div class="form-group">'
+                                +'<input type="text" class="form-control" value="เลขข้อ">'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-3 ">'
+                            +'<div class="form-group">'
+                                +'<button type="button" class="btn btn-outline-success"><i class="fa fa-floppy-o"></i></button>'
+                            +'</div>'
+                        +'</div>'
+                        +''
+                    +'</div>';
+
+                html += '</div>';
+
+            $("#onshowbible").append(html);
+            
+            $("#1").append(`<div class="row" id=".$numernicid. ">
 
                         <div class="row" >
                             <div class="col-lg-2 ">
@@ -224,6 +231,8 @@
                                 </div>
                             </div>
                         </div>`);
+
+            console.log(numernicid);
         }
 
     </script>
