@@ -40,20 +40,6 @@
             <div class="intro">
                 <h2 class="text-center">Agenda</h2>
             </div>
-            <!-- <div class="row articles" >
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                </div>
-            </div> -->
             
             <div class="row articles" >
                 <div class="col-12">
@@ -165,11 +151,10 @@
     <script type="text/javascript">
 
         function onclickaddbible() {
-            // document.getElementById("demo").style.color = "red";
             var numernicid = Math.floor(Math.random() * 1000001);
-            var html = '<div>' ;
+            var html = '<div id="'+(numernicid)+'">' ;
 
-                html += '<div class="row" id=".$numernicid. ">'
+                html += '<div class="row" id="'+ (numernicid + 1) +'">'
                         +'<div class="col-lg-2 ">'
                             +'<div class="form-group">'
                                 +'<label>หัวข้อพระคัมภีร์</label>'
@@ -201,37 +186,34 @@
                                 +'<button type="button" class="btn btn-outline-success"><i class="fa fa-floppy-o"></i></button>'
                             +'</div>'
                         +'</div>'
-                        +''
+                    +'</div>'
+                    +'<div class="row" >'
+                        +'<div class="col-lg-2 ">'
+                            +'<div class="form-group">'
+                                +'<label>หัวข้อพระคัมภีร์</label>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-7 ">'
+                            +'<div class="form-group">'
+                                +'<label>sss</label>'
+                                +'<label>sss</label>'
+                                +'<label>sss</label>'
+                            +'</div>'
+                        +'</div>'
+                        +'<div class="col-lg-3 ">'
+                            +'<div class="form-group">'
+                                +'<button type="button" class="btn btn-outline-info pad-r"><i class="fa fa-search"></i></button>'
+                                +'<button type="button" class="btn btn-outline-warning pad-r"><i class="fa fa-pencil"></i></button>'
+                                +'<button type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>'
+                            +'</div>'
+                        +'</div>'
                     +'</div>';
 
                 html += '</div>';
 
+
             $("#onshowbible").append(html);
             
-            $("#1").append(`<div class="row" id=".$numernicid. ">
-
-                        <div class="row" >
-                            <div class="col-lg-2 ">
-                                <div class="form-group">
-                                    <label>หัวข้อพระคัมภีร์</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 ">
-                                <div class="form-group">
-                                    <label>sss</label>
-                                    <label>sss</label>
-                                    <label>sss</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 ">
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-outline-info"><i class="fa fa-search"></i></button>
-                                    <button type="button" class="btn btn-outline-warning"><i class="fa fa-pencil"></i></button>
-                                    <button type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>`);
-
             console.log(numernicid);
         }
 
