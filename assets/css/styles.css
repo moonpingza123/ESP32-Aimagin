@@ -3,10 +3,22 @@
 		.txt-center-bb{
 			text-align: center;
 		}
+
+		.br-hymn{
+			display: none;
+		}
 	}
 
 	.navbar-bg-l{
 		background-color: #ccffff;
+	}
+
+	.txt-center-hymn{
+		text-align: center;
+	}
+
+	.size-hymn-md{
+		font-size: 30px;
 	}
 
 	.card-bible-gary{
@@ -18,6 +30,16 @@
 		padding-right: 15px;
 	}
 
+	.card-hymn{
+		border: 2px solid #d9d9d9;
+		border-radius: 10px;
+		padding-top: 15px;
+		padding-left: 15px;
+		padding-bottom: 15px;
+		padding-right: 15px;
+		/*height: 350px;*/
+	}
+
 	.pad-r{
 		/*padding-right: 5px;*/
 		margin-right: 5px;
@@ -26,3 +48,30 @@
 	/*.pad-btn-create-l{
 		margin-left: auto;
 	}*/	
+
+	.bible-none{
+		display: none;
+	}
+
+	.hymn-used-g{
+		color: #808080;
+	}
+
+	.hymn-size-lg{
+		font-size: 35px;
+	}
+
+	.hymn-size-md{
+		font-size: 25px;
+	}
+
+	.hymnnumber-size-lg{
+		font-size: 150px;
+		margin-top: -60px;
+		margin-bottom: -20px;
+	}
+
+	.hymnnumber-size-md{
+		font-size: 70px;
+		margin-top: -27px;
+	}
