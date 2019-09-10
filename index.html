@@ -122,15 +122,16 @@
             document.getElementById(numset).remove();
         }
 
-        function sethymnnumber(){
-            // $("#hymnnumberget") = "1";
-            $("#hymnnumbergetth").html("-");
-            $("#hymnnumbergeten").html("-");
-        }
-        sethymnnumber();
+        // function sethymnnumber(){
+        //     $("#hymnnumbergetth").html("-");
+        //     $("#hymnnumbergeten").html("-");
+        // }
+        // sethymnnumber();
 
-        function addhymnthisshow(){
-            var setnumberhymn = '568' ;
+        function addhymnthisshow(numset){
+            console.log(numset);
+            // var setnumberhymn = '+' ;
+            var setnumberhymn = '256' ;
             console.log(setnumberhymn);
             $("#hymnnumbergetth").html(setnumberhymn);
 
@@ -141,6 +142,7 @@
         }
 
         function setviewhymn(){
+            var numhymnget ='';
             var html = '<div class="row ">';
                 html += '<div class="col-lg-3 ">'
                         +'<div class="card-hymn txt-center-hymn">'
@@ -154,19 +156,19 @@
                     +'<div class="col-lg-6 ">'
                         +'<div class="txt-center-hymn">'
                             +'<label class="hymn-size-lg">บทเพลง / 诗</label><br>'
-                            +'<label class="hymnnumber-size-lg" id="hymnnumbergetth"></label><br>'
+                            +'<label class="hymnnumber-size-lg" id="hymnnumbergetth">-</label><br>'
                             +'<label class="hymn-size-md">HYMN</label><br>'
-                            +'<label class="hymnnumber-size-md" id="hymnnumbergeten"></label><br>'
+                            +'<label class="hymnnumber-size-md" id="hymnnumbergeten">-</label><br>'
                             +'<span id="numberhymnset">'
                             +'</span>'
                         +'</div>'
                     +'</div>'
                     +'<div class="col-lg-3 ">'
                         +'<div class="form-group">'
-                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ">'
+                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ" value="'+ numhymnget +'">'
                         +'</div>'
                         +'<div class="form-group">'
-                            +'<button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>'
+                            +'<button type="button" class="btn btn-info" onclick="addhymnthisshow('+ numhymnget +')">เพิ่ม</button>'
                         +'</div>'
                     +'</div>';
 
