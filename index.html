@@ -95,38 +95,6 @@
                                 </div>
                             </div>
                         </div> -->
-                        
-                            <div class="col-lg-3 ">
-                                <div class="card-hymn txt-center-hymn">
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">1</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">28</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">25</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="txt-center-hymn">
-                                    <label class="hymn-size-lg">บทเพลง / 诗</label><br>
-                                    <label class="hymnnumber-size-lg" id="hymnnumbergetth"></label><br>
-                                    <label class="hymn-size-md">HYMN</label><br>
-                                    <label class="hymnnumber-size-md" id="hymnnumbergeten"></label><br>
-                                    <span id="numberhymnset">
-                                        
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 ">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ" value="">
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>
-                                </div>
-                            </div>
-                        
-
                     </div>
                 </div>
             </div>
@@ -174,23 +142,34 @@
 
         function setviewhymn(){
             var html = '<div class="row ">';
-                html += ''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +''
-                    +'';
+                html += '<div class="col-lg-3 ">'
+                        +'<div class="card-hymn txt-center-hymn">'
+                            +'<span id="2251ss">'
+                            +'</span>'
+                            +'<label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>'
+                            +'<label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>'
+                            +'<label class="size-hymn-md hymn-used-g">1</label><span class="br-hymn"><br></span>'
+                        +'</div>'
+                    +'</div>'
+                    +'<div class="col-lg-6 ">'
+                        +'<div class="txt-center-hymn">'
+                            +'<label class="hymn-size-lg">บทเพลง / 诗</label><br>'
+                            +'<label class="hymnnumber-size-lg" id="hymnnumbergetth"></label><br>'
+                            +'<label class="hymn-size-md">HYMN</label><br>'
+                            +'<label class="hymnnumber-size-md" id="hymnnumbergeten"></label><br>'
+                            +'<span id="numberhymnset">'
+                            +'</span>'
+                        +'</div>'
+                    +'</div>'
+                    +'<div class="col-lg-3 ">'
+                        +'<div class="form-group">'
+                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ">'
+                        +'</div>'
+                        +'<div class="form-group">'
+                            +'<button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>'
+                        +'</div>'
+                    +'</div>';
+
                 html += '</div>';
 
             $("#sethymnonview").append(html);
