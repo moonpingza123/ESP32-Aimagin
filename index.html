@@ -128,8 +128,10 @@
         // }
         // sethymnnumber();
 
-        function addhymnthisshow(numset){
-            console.log(numset);
+        function addhymnthisshow(){
+            var numset = document.getElementById('numbersectionhymn');
+            console.log(numset.value); 
+
             // var setnumberhymn = '+' ;
             var setnumberhymn = '256' ;
             console.log(setnumberhymn);
@@ -137,8 +139,24 @@
 
             // $("#hymnnumbergetth").html("196");
 
-            var numberhymn = html($("#numbersectionhymn"));
-            console.log(numberhymn);
+            // var numberhymn = html($("#numbersectionhymn"));
+            // console.log(numberhymn);
+            var i = 1;
+            sethymnused(i++);
+        }
+
+        function sethymnused(numex){
+            console.log(numex);
+            var allnum ;
+                allnum = allnum + numex ;
+            var numset = document.getElementById('numbersectionhymn');
+            var blanktxt = ' ';
+            console.log(numset.value);
+            console.log(blanktxt);
+            var html = '<label class="size-hymn-md hymn-used-g">'+ numset.value +'</label>';
+                html += '<span class="br-hymn"><br></span>'
+
+            $("#hymnalreadyused").append(html);
         }
 
         function setviewhymn(){
@@ -146,11 +164,8 @@
             var html = '<div class="row ">';
                 html += '<div class="col-lg-3 ">'
                         +'<div class="card-hymn txt-center-hymn">'
-                            +'<span id="2251ss">'
+                            +'<span id="hymnalreadyused">'
                             +'</span>'
-                            +'<label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>'
-                            +'<label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>'
-                            +'<label class="size-hymn-md hymn-used-g">1</label><span class="br-hymn"><br></span>'
                         +'</div>'
                     +'</div>'
                     +'<div class="col-lg-6 ">'
@@ -168,7 +183,7 @@
                             +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ" value="'+ numhymnget +'">'
                         +'</div>'
                         +'<div class="form-group">'
-                            +'<button type="button" class="btn btn-info" onclick="addhymnthisshow('+ numhymnget +')">เพิ่ม</button>'
+                            +'<button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>'
                         +'</div>'
                     +'</div>';
 
