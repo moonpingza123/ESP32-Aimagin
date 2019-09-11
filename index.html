@@ -98,6 +98,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- test -->
+            <div class="row">
+                <button onclick="buttonClick()">Click Me</button>
+                <input type="text" id="inc" value="0"></input>
+            </div>
         </div>
     </div>
 
@@ -106,6 +112,14 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script> -->
     <script type="text/javascript">
 
+        var iex = 0;
+        function buttonClick() {
+            // document.getElementById('inc').value = ++iex;
+            // console.log(iex);
+            var setnum = ++iex
+            console.log(setnum);
+        }
+        
         function createbibleset(numset){
             // document.getElementById(numset+2).style.display = "inline";
             document.getElementById(numset+2).style.display = "block";
@@ -141,14 +155,15 @@
 
             // var numberhymn = html($("#numbersectionhymn"));
             // console.log(numberhymn);
-            var i = 1;
-            sethymnused(i++);
+            var exnumber = 1;
+            console.log(exnumber);
+                exnumber += 1;
+            console.log(exnumber);
+
+            sethymnused();
         }
 
-        function sethymnused(numex){
-            console.log(numex);
-            var allnum ;
-                allnum = allnum + numex ;
+        function sethymnused(){
             var numset = document.getElementById('numbersectionhymn');
             var blanktxt = ' ';
             console.log(numset.value);
