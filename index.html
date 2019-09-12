@@ -69,10 +69,6 @@
                                 <div class="card-hymn txt-center-hymn">
                                     <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
                                     <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">1</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">28</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">25</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
@@ -121,13 +117,11 @@
         // }
         
         function createbibleset(numset){
-            // document.getElementById(numset+2).style.display = "inline";
             document.getElementById(numset+2).style.display = "block";
             document.getElementById(numset+1).style.display = "none";
         }
 
         function updatebibleset(numset){
-            // document.getElementById(numset+1).style.display = "inline";
             document.getElementById(numset+1).style.display = "block";
             document.getElementById(numset+2).style.display = "none";
         }
@@ -136,29 +130,16 @@
             document.getElementById(numset).remove();
         }
 
-        // function sethymnnumber(){
-        //     $("#hymnnumbergetth").html("-");
-        //     $("#hymnnumbergeten").html("-");
-        // }
-        // sethymnnumber();
-
         var Count = 0;
 
         function addhymnthisshow(){
 
-            // var exnumber = '';
-            // if (exnumber == '') {
-            //     alert("กรุณากรอกเลขบทเพลงลงในช่องกรอก");
-            // }
-
-            // var numberhymngth = document.getElementById('hymnnumbergetth');
-
             var checknumberhymn = document.getElementById('numbersectionhymn');
             if (checknumberhymn.value == '') {
                 alert("กรุณากรอกเลขบทเพลงลงในช่องกรอก");
-                // numberhymngth = '';
             }else{
-                $("#hymnnumbergetth").html(numset.value);
+                $("#hymnnumbergetth").html(checknumberhymn.value);
+
                 var setnum = ++Count
                 console.log(setnum);
 
@@ -168,21 +149,8 @@
             var numset = document.getElementById('numbersectionhymn');
             console.log(numset.value); 
 
-            // var setnumberhymn = '+' ;
-            // var setnumberhymn = '256' ;
-            // console.log(setnumberhymn);
-            // $("#hymnnumbergetth").html(setnumberhymn);
-
-            // $("#hymnnumbergetth").html(numset.value);
-
-            // $("#hymnnumbergetth").html("196");
-
             // var numberhymn = html($("#numbersectionhymn"));
             // console.log(numberhymn);
-            // var exnumber = 1;
-            // console.log(exnumber);
-            //     exnumber += 1;
-            // console.log(exnumber);
 
             // var setnum = ++Count
             // console.log(setnum);
@@ -215,7 +183,7 @@
                             +'<label class="hymn-size-lg">บทเพลง / 诗</label><br>'
                             +'<label class="hymnnumber-size-lg" id="hymnnumbergetth">-</label><br>'
                             +'<label class="hymn-size-md">HYMN</label><br>'
-                            +'<label class="hymnnumber-size-md" id="hymnnumbergeten">-</label><br>'
+                            +'<label class="hymnnumber-size-md" id="hymnnumbergeten">180</label><br>'
                             +'<span id="numberhymnset">'
                             +'</span>'
                         +'</div>'

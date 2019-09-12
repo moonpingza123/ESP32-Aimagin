@@ -55,6 +55,7 @@
 
 	.hymn-used-g{
 		color: #808080;
+		margin-bottom: -10px;
 	}
 
 	.hymn-size-lg{
@@ -66,12 +67,12 @@
 	}
 
 	.hymnnumber-size-lg{
-		font-size: 150px;
+		font-size: 160px;
 		margin-top: -60px;
 		margin-bottom: -20px;
 	}
 
 	.hymnnumber-size-md{
-		font-size: 70px;
+		font-size: 80px;
 		margin-top: -27px;
 	}
