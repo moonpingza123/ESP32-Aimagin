@@ -130,7 +130,7 @@
             document.getElementById(numset).remove();
         }
 
-        var Count = 0;
+        var Countnumberhymn = 0;
 
         function addhymnthisshow(){
 
@@ -140,7 +140,8 @@
             }else{
                 $("#hymnnumbergetth").html(checknumberhymn.value);
 
-                var setnum = ++Count
+                // console.log(Countnumberhymn);
+                var setnum = ++Countnumberhymn
                 console.log(setnum);
 
                 sethymnused();
@@ -164,7 +165,8 @@
             // console.log(numset.value);
             // console.log(blanktxt);
             var html = '<label class="size-hymn-md hymn-used-g">'+ numset.value +'</label>';
-                html += '<span class="br-hymn"><br></span>'
+                html += '<button type="button" class="close" >22</button>'
+                        +'<span class="br-hymn"><br></span>';
 
             $("#hymnalreadyused").append(html);
         }
@@ -190,7 +192,7 @@
                     +'</div>'
                     +'<div class="col-lg-3 ">'
                         +'<div class="form-group">'
-                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="บทเพลง" value="'+ numhymnget +'">'
+                            +'<input type="number" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="บทเพลง" value="'+ numhymnget +'">'
                         +'</div>'
                         +'<div class="form-group">'
                             +'<button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>'
@@ -203,7 +205,10 @@
         }
         setviewhymn();
 
+        var Countlistbible = 1;
+
         function onclickaddbible() {
+
             var numernicid = Math.floor(Math.random() * 1000001);
             var html = '<div id="'+(numernicid)+'">' ;
 
