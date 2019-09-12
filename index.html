@@ -100,10 +100,10 @@
             </div>
 
             <!-- test -->
-            <div class="row">
+            <!-- <div class="row">
                 <button onclick="buttonClick()">Click Me</button>
                 <input type="text" id="inc" value="0"></input>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -112,13 +112,13 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script> -->
     <script type="text/javascript">
 
-        var iex = 0;
-        function buttonClick() {
-            // document.getElementById('inc').value = ++iex;
-            // console.log(iex);
-            var setnum = ++iex
-            console.log(setnum);
-        }
+        // var iex = 0;
+        // function buttonClick() {
+        //     // document.getElementById('inc').value = ++iex;
+        //     // console.log(iex);
+        //     var setnum = ++iex
+        //     console.log(setnum);
+        // }
         
         function createbibleset(numset){
             // document.getElementById(numset+2).style.display = "inline";
@@ -142,32 +142,59 @@
         // }
         // sethymnnumber();
 
+        var Count = 0;
+
         function addhymnthisshow(){
+
+            // var exnumber = '';
+            // if (exnumber == '') {
+            //     alert("กรุณากรอกเลขบทเพลงลงในช่องกรอก");
+            // }
+
+            // var numberhymngth = document.getElementById('hymnnumbergetth');
+
+            var checknumberhymn = document.getElementById('numbersectionhymn');
+            if (checknumberhymn.value == '') {
+                alert("กรุณากรอกเลขบทเพลงลงในช่องกรอก");
+                // numberhymngth = '';
+            }else{
+                $("#hymnnumbergetth").html(numset.value);
+                var setnum = ++Count
+                console.log(setnum);
+
+                sethymnused();
+            }
+
             var numset = document.getElementById('numbersectionhymn');
             console.log(numset.value); 
 
             // var setnumberhymn = '+' ;
-            var setnumberhymn = '256' ;
-            console.log(setnumberhymn);
-            $("#hymnnumbergetth").html(setnumberhymn);
+            // var setnumberhymn = '256' ;
+            // console.log(setnumberhymn);
+            // $("#hymnnumbergetth").html(setnumberhymn);
+
+            // $("#hymnnumbergetth").html(numset.value);
 
             // $("#hymnnumbergetth").html("196");
 
             // var numberhymn = html($("#numbersectionhymn"));
             // console.log(numberhymn);
-            var exnumber = 1;
-            console.log(exnumber);
-                exnumber += 1;
-            console.log(exnumber);
+            // var exnumber = 1;
+            // console.log(exnumber);
+            //     exnumber += 1;
+            // console.log(exnumber);
 
-            sethymnused();
+            // var setnum = ++Count
+            // console.log(setnum);
+
+            // sethymnused();
         }
 
         function sethymnused(){
             var numset = document.getElementById('numbersectionhymn');
-            var blanktxt = ' ';
-            console.log(numset.value);
-            console.log(blanktxt);
+            var blanktxt = '';
+            // console.log(numset.value);
+            // console.log(blanktxt);
             var html = '<label class="size-hymn-md hymn-used-g">'+ numset.value +'</label>';
                 html += '<span class="br-hymn"><br></span>'
 
@@ -195,7 +222,7 @@
                     +'</div>'
                     +'<div class="col-lg-3 ">'
                         +'<div class="form-group">'
-                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ" value="'+ numhymnget +'">'
+                            +'<input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="บทเพลง" value="'+ numhymnget +'">'
                         +'</div>'
                         +'<div class="form-group">'
                             +'<button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>'
