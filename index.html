@@ -138,35 +138,47 @@
             if (checknumberhymn.value == '') {
                 alert("กรุณากรอกเลขบทเพลงลงในช่องกรอก");
             }else{
-                $("#hymnnumbergetth").html(checknumberhymn.value);
+                // $("#hymnnumbergetth").html(checknumberhymn.value);
 
                 // console.log(Countnumberhymn);
                 var setnum = ++Countnumberhymn
                 console.log(setnum);
+                console.log(Countnumberhymn);
 
-                sethymnused();
+                if(setnum <= 8){
+                    // setnum = --Countnumberhymn
+                    $("#hymnnumbergetth").html(checknumberhymn.value);
+                    sethymnused();
+                }else{
+                    alert("จำนวนบทเพลงเต็มไม่สามารถเพิ่มข้อมูลได้อีก");
+                    console.log(setnum);
+                }
             }
-
-            var numset = document.getElementById('numbersectionhymn');
-            console.log(numset.value); 
-
-            // var numberhymn = html($("#numbersectionhymn"));
-            // console.log(numberhymn);
 
             // var setnum = ++Count
             // console.log(setnum);
 
-            // sethymnused();
         }
 
         function sethymnused(){
+
+            var numernicid = Math.floor(Math.random() * 1000001);
+            var idclose = '';
+
             var numset = document.getElementById('numbersectionhymn');
             var blanktxt = '';
-            // console.log(numset.value);
-            // console.log(blanktxt);
-            var html = '<label class="size-hymn-md hymn-used-g">'+ numset.value +'</label>';
-                html += '<button type="button" class="close" >22</button>'
+            
+            var html = '<span>';
+                html += '<label class="size-hymn-md hymn-used-g">'+ numset.value 
+                            // +''
+                            +'<button type="button" class="close size-icon-close" >'
+                                +'<i class="fa fa-times"></i>'
+                            +'</button>'
+                        +'</label>'
                         +'<span class="br-hymn"><br></span>';
+                    +'</span>';
+
+                // html += '</div>';
 
             $("#hymnalreadyused").append(html);
         }
@@ -175,7 +187,7 @@
             var numhymnget ='';
             var html = '<div class="row ">';
                 html += '<div class="col-lg-3 ">'
-                        +'<div class="card-hymn txt-center-hymn">'
+                        +'<div class="card-hymn txt-center-hymn card-hymn-height">'
                             +'<span id="hymnalreadyused">'
                             +'</span>'
                         +'</div>'

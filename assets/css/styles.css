@@ -7,6 +7,18 @@
 		.br-hymn{
 			display: none;
 		}
+
+		.card-hymn-height{
+			/*display: block;*/
+			/*all: revert;*/
+			height: 100% !important;
+		}
+
+		/*.card-hymn-height: unset;*/
+	}
+
+	.card-hymn-height{
+		height: 356px;
 	}
 
 	.navbar-bg-l{
@@ -77,4 +89,9 @@
 	.hymnnumber-size-md{
 		font-size: 80px;
 		margin-top: -27px;
+	}
+
+	.size-icon-close{
+		font-size: 10px;
+		margin-left: 5px;
 	}
