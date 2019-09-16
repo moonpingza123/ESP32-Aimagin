@@ -52,6 +52,63 @@
                             </div>
                         </div>
                         <div id="onshowbible"></div>
+
+                        <div class="row"  >
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-2 ">
+                                        <div class="form-group">
+                                            <label>หัวข้อพระคัมภีร์</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 ">
+                                        <div class="form-group">
+                                            <label class="bible-set-one">เอเฟโซ  </label>
+                                            <label class="bible-set-one">弗</label>
+                                            <label class="bible-set-one">EPH.</label>
+                                            <label class="bible-set-one">1:</label>
+                                            <label class="bible-set-one">15-23</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 ">
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-outline-info pad-r"><i class="fa fa-search"></i></button>
+                                            <button type="button" class="btn btn-outline-warning pad-r"><i class="fa fa-pencil"></i></button>
+                                            <button type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"  >
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-2 ">
+                                        <div class="form-group">
+                                            <label>หัวข้อพระคัมภีร์</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 ">
+                                        <div class="form-group">
+                                            <label class="bible-set-one">เอเฟโซ  </label>
+                                            <label class="bible-set-one">弗</label>
+                                            <label class="bible-set-one">EPH.</label>
+                                            <label class="bible-set-one">1:</label>
+                                            <label class="bible-set-one">15-23</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 ">
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-outline-info pad-r"><i class="fa fa-search"></i></button>
+                                            <button type="button" class="btn btn-outline-warning pad-r"><i class="fa fa-pencil"></i></button>
+                                            <button type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -63,6 +120,8 @@
                         <span id="sethymnonview">
                             
                         </span>
+
+                        
 
                         <!-- <div class="row ">
                             <div class="col-lg-3 ">
@@ -98,6 +157,7 @@
             <!-- test -->
             <!-- <div class="row">
                 <button onclick="buttonClick()">Click Me</button>
+                <button onclick="buttonClicktest()">test return</button>
                 <input type="text" id="inc" value="0"></input>
             </div> -->
         </div>
@@ -109,11 +169,13 @@
     <script type="text/javascript">
 
         // var iex = 0;
-        // function buttonClick() {
+        // function buttonClicktest() {
         //     // document.getElementById('inc').value = ++iex;
         //     // console.log(iex);
-        //     var setnum = ++iex
-        //     console.log(setnum);
+        //     // var setnum = ++iex
+        //     // console.log(setnum);
+        //     console.log(Countnumberhymn);
+        //     --Countnumberhymn;
         // }
         
         function createbibleset(numset){
@@ -128,6 +190,7 @@
 
         function deletebibleset(numset){
             document.getElementById(numset).remove();
+            --Countlistbible;
         }
 
         var Countnumberhymn = 0;
@@ -141,17 +204,24 @@
                 // $("#hymnnumbergetth").html(checknumberhymn.value);
 
                 // console.log(Countnumberhymn);
-                var setnum = ++Countnumberhymn
-                console.log(setnum);
-                console.log(Countnumberhymn);
+                // var setnum = ++Countnumberhymn
 
-                if(setnum <= 8){
+                // var setnum = 0 ;
+                // console.log(setnum);
+                // console.log(Countnumberhymn);
+
+                // if(setnum <= 8){
+                if(Countnumberhymn <= 7){
                     // setnum = --Countnumberhymn
+                    // var setnum = ++Countnumberhymn ;
+                    // var Countnumberhymn = ++Countnumberhymn ;
+                    ++Countnumberhymn ;
+
                     $("#hymnnumbergetth").html(checknumberhymn.value);
                     sethymnused();
                 }else{
                     alert("จำนวนบทเพลงเต็มไม่สามารถเพิ่มข้อมูลได้อีก");
-                    console.log(setnum);
+                    // console.log(setnum);
                 }
             }
 
@@ -160,18 +230,20 @@
 
         }
 
+        var idhymnclose = 'hymnid-';
+
         function sethymnused(){
 
             var numernicid = Math.floor(Math.random() * 1000001);
-            var idclose = '';
+            // var idhymnclose = 'hymnid-';
 
             var numset = document.getElementById('numbersectionhymn');
             var blanktxt = '';
             
-            var html = '<span>';
+            var html = '<span id="'+ idhymnclose + numernicid +'">';
                 html += '<label class="size-hymn-md hymn-used-g">'+ numset.value 
                             // +''
-                            +'<button type="button" class="close size-icon-close" >'
+                            +'<button type="button" class="close size-icon-close" onclick="deletehymnused('+(numernicid)+')">'
                                 +'<i class="fa fa-times"></i>'
                             +'</button>'
                         +'</label>'
@@ -181,6 +253,14 @@
                 // html += '</div>';
 
             $("#hymnalreadyused").append(html);
+        }
+
+        function deletehymnused(numset){
+            // console.log(numset);
+            var numsetdeletehymn = idhymnclose+numset;
+            // console.log(numsetdeletehymn);
+            document.getElementById(numsetdeletehymn).remove();
+            --Countnumberhymn;
         }
 
         function setviewhymn(){
@@ -291,7 +371,11 @@
 
             $("#onshowbible").append(html);
             
-            console.log(numernicid);
+            // console.log(numernicid);
+            // console.log(Countlistbible);
+            ++Countlistbible;
+            console.log(Countlistbible);
+
         }
 
         onclickaddbible();
