@@ -20,8 +20,24 @@
 		font-size: 50px;
 	}
 
+	.bible-set-two{
+		font-size: 35px;
+	}
+
+	.bible-set-three{
+		font-size: 25px;
+	}
+
+	.bible-cen{
+		text-align: center;
+	}
+
 	.card-hymn-height{
 		height: 356px;
+	}
+
+	.title-bible{
+		font-size: 20px;
 	}
 
 	.navbar-bg-l{

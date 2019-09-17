@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <label id="ex2">ตัวอย่าง 1 :</label>
+  <input class="form-control" type="text" id="ex1">
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" onclick="exsetdata()" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <label >เเสดง</label>
+          <label id="testex"></label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+        function exsetdata(){
+            // var ex1 = document.getElementById('ex1').value;
+
+            // console.log(ex1);
+            console.log(11);
+            // $("#ex2").val(2658);
+            var checknum = document.getElementById('ex1');
+            console.log(checknum.value);
+            $("#testex").html(checknum.value);
+            // $("#testex").html('225365');
+        }
+  </script>
+</body>
+</html>

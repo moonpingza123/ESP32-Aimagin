@@ -56,16 +56,17 @@
                         <div class="row"  >
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-lg-2 ">
+                                    <!-- <div class="col-lg-2 ">
                                         <div class="form-group">
                                             <label>หัวข้อพระคัมภีร์</label>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-7 ">
+                                    </div> -->
+                                    <div class="col-lg-9 bible-cen">
                                         <div class="form-group">
-                                            <label class="bible-set-one">เอเฟโซ  </label>
-                                            <label class="bible-set-one">弗</label>
-                                            <label class="bible-set-one">EPH.</label>
+                                            <label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>
+                                            <span class="br-hymn"><br></span>
+                                            <label class="bible-set-one">弗 </label>
+                                            <label class="bible-set-one">ENG</label>
                                             <label class="bible-set-one">1:</label>
                                             <label class="bible-set-one">15-23</label>
                                         </div>
@@ -84,18 +85,18 @@
                         <div class="row"  >
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-lg-2 ">
+                                    <!-- <div class="col-lg-2 ">
                                         <div class="form-group">
                                             <label>หัวข้อพระคัมภีร์</label>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-7 ">
+                                    </div> -->
+                                    <div class="col-lg-9 bible-cen ">
                                         <div class="form-group">
-                                            <label class="bible-set-one">เอเฟโซ  </label>
-                                            <label class="bible-set-one">弗</label>
-                                            <label class="bible-set-one">EPH.</label>
-                                            <label class="bible-set-one">1:</label>
-                                            <label class="bible-set-one">15-23</label>
+                                            <label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>
+                                            <label class="bible-set-two">弗</label>
+                                            <label class="bible-set-two">ENG</label>
+                                            <label class="bible-set-two">1:</label>
+                                            <label class="bible-set-two">15-23</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 ">
@@ -120,36 +121,6 @@
                         <span id="sethymnonview">
                             
                         </span>
-
-                        
-
-                        <!-- <div class="row ">
-                            <div class="col-lg-3 ">
-                                <div class="card-hymn txt-center-hymn">
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                    <label class="size-hymn-md hymn-used-g">225</label><span class="br-hymn"><br></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="txt-center-hymn">
-                                    <label class="hymn-size-lg">บทเพลง / 诗</label><br>
-                                    <label class="hymnnumber-size-lg" id="hymnnumbergetth"></label><br>
-                                    <label class="hymn-size-md">HYMN</label><br>
-                                    <label class="hymnnumber-size-md" id="hymnnumbergeten"></label><br>
-                                    <span id="numberhymnset">
-                                        
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 ">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="numbersectionhymn" name="numbersectionhymn"  placeholder="เลขข้อ" value="">
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-info" onclick="addhymnthisshow()">เพิ่ม</button>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -206,10 +177,6 @@
                 // console.log(Countnumberhymn);
                 // var setnum = ++Countnumberhymn
 
-                // var setnum = 0 ;
-                // console.log(setnum);
-                // console.log(Countnumberhymn);
-
                 // if(setnum <= 8){
                 if(Countnumberhymn <= 7){
                     // setnum = --Countnumberhymn
@@ -221,25 +188,19 @@
                     sethymnused();
                 }else{
                     alert("จำนวนบทเพลงเต็มไม่สามารถเพิ่มข้อมูลได้อีก");
-                    // console.log(setnum);
                 }
             }
-
             // var setnum = ++Count
             // console.log(setnum);
-
         }
 
         var idhymnclose = 'hymnid-';
 
         function sethymnused(){
-
             var numernicid = Math.floor(Math.random() * 1000001);
             // var idhymnclose = 'hymnid-';
-
             var numset = document.getElementById('numbersectionhymn');
             var blanktxt = '';
-            
             var html = '<span id="'+ idhymnclose + numernicid +'">';
                 html += '<label class="size-hymn-md hymn-used-g">'+ numset.value 
                             // +''
@@ -249,16 +210,12 @@
                         +'</label>'
                         +'<span class="br-hymn"><br></span>';
                     +'</span>';
-
                 // html += '</div>';
-
             $("#hymnalreadyused").append(html);
         }
 
         function deletehymnused(numset){
-            // console.log(numset);
             var numsetdeletehymn = idhymnclose+numset;
-            // console.log(numsetdeletehymn);
             document.getElementById(numsetdeletehymn).remove();
             --Countnumberhymn;
         }
@@ -292,7 +249,6 @@
                     +'</div>';
 
                 html += '</div>';
-
             $("#sethymnonview").append(html);
         }
         setviewhymn();
@@ -300,6 +256,14 @@
         var Countlistbible = 1;
 
         function onclickaddbible() {
+            // console.log(Countlistbible);
+            var bibletitle = '<div class="form-group">';
+                bibletitle += '<label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>'
+                                +'<label class="bible-set-two">弗</label>'
+                                +'<label class="bible-set-two">ENG</label>'
+                                +'<label class="bible-set-two">1:</label>'
+                                +'<label class="bible-set-two">15-23</label>'
+                            +'</div>';
 
             var numernicid = Math.floor(Math.random() * 1000001);
             var html = '<div id="'+(numernicid)+'">' ;
@@ -309,7 +273,7 @@
                             +'<div class="row">'
                                 +'<div class="col-lg-2 ">'
                                     +'<div class="form-group">'
-                                        +'<label>หัวข้อพระคัมภีร์</label>'
+                                        +'<label class="title-bible">หัวข้อพระคัมภีร์</label>'
                                     +'</div>'
                                 +'</div>'
                                 +'<div class="col-lg-3 ">'
@@ -344,17 +308,13 @@
                     +'<div class="row bible-none" id="'+ (numernicid + 2) +'" >'
                         +'<div class="col-lg-12">'
                             +'<div class="row">'
-                                +'<div class="col-lg-2 ">'
-                                    +'<div class="form-group">'
-                                        +'<label>หัวข้อพระคัมภีร์</label>'
-                                    +'</div>'
-                                +'</div>'
-                                +'<div class="col-lg-7 ">'
-                                    +'<div class="form-group">'
-                                        +'<label>sss</label>'
-                                        +'<label>sss</label>'
-                                        +'<label>sss</label>'
-                                    +'</div>'
+                                +'<div class="col-lg-9 ">'
+                                    + bibletitle
+                                    // +'<div class="form-group">'
+                                    //     +'<label>sss</label>'
+                                    //     +'<label>sss</label>'
+                                    //     +'<label>sss</label>'
+                                    // +'</div>'
                                 +'</div>'
                                 +'<div class="col-lg-3 ">'
                                     +'<div class="form-group">'
@@ -384,3 +344,5 @@
 </body>
 
 </html>
+
+
