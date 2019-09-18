@@ -140,6 +140,27 @@
         // }
         
         function createbibleset(numset){
+            // var bibletitle = '<div class="form-group">';
+            // if (Countlistbible <= 1) {
+            //     bibletitle += '<label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>'
+            //                     +'<span class="br-hymn"><br></span>'
+            //                     +'<label class="bible-set-one">弗</label>'
+            //                     +'<label class="bible-set-one">ENG</label>'
+            //                     +'<label class="bible-set-one">1:</label>'
+            //                     +'<label class="bible-set-one">15-23</label>';
+            // }else if (Countlistbible > 1) {
+            //     bibletitle += '<label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>'
+            //                     +'<label class="bible-set-two">弗</label>'
+            //                     +'<label class="bible-set-two">ENG</label>'
+            //                     +'<label class="bible-set-two">1:</label>'
+            //                     +'<label class="bible-set-two">15-23</label>';
+            // }
+            // bibletitle += '</div>';
+
+            // $("#onshowbible").append(html);
+            // $("#'+dddd'").append(html);
+            // document.getElementById(numset+3).append(bibletitle);
+
             document.getElementById(numset+2).style.display = "block";
             document.getElementById(numset+1).style.display = "none";
         }
@@ -243,7 +264,7 @@
         }
         setviewhymn();
 
-        var Countlistbible = 1;
+        var Countlistbible = 0;
 
         function onclickaddbible() {
             // console.log(Countlistbible);
@@ -271,7 +292,7 @@
                 //                 +'<label class="bible-set-two">15-23</label>';
             bibletitle += '</div>';
 
-            var numernicid = Math.floor(Math.random() * 1000001);
+            var numernicid = Math.floor(Math.random() * 10000001);
             var html = '<div id="'+(numernicid)+'">' ;
 
                 html += '<div class="row" id="'+ (numernicid + 1) +'">'
@@ -316,6 +337,7 @@
                             +'<div class="row">'
                                 +'<div class="col-lg-9 bible-cen">'
                                     + bibletitle
+                                    // +'<span id="'+ (numernicid + 3) +'"></span>'
                                     // +'<div class="form-group">'
                                     //     +'<label>sss</label>'
                                     //     +'<label>sss</label>'
