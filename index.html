@@ -53,14 +53,9 @@
                         </div>
                         <div id="onshowbible"></div>
 
-                        <div class="row"  >
+                        <!-- <div class="row"  >
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <!-- <div class="col-lg-2 ">
-                                        <div class="form-group">
-                                            <label>หัวข้อพระคัมภีร์</label>
-                                        </div>
-                                    </div> -->
                                     <div class="col-lg-9 bible-cen">
                                         <div class="form-group">
                                             <label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>
@@ -80,16 +75,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="row"  >
+                        <!-- <div class="row"  >
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <!-- <div class="col-lg-2 ">
-                                        <div class="form-group">
-                                            <label>หัวข้อพระคัมภีร์</label>
-                                        </div>
-                                    </div> -->
                                     <div class="col-lg-9 bible-cen ">
                                         <div class="form-group">
                                             <label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>
@@ -108,7 +98,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -258,12 +248,28 @@
         function onclickaddbible() {
             // console.log(Countlistbible);
             var bibletitle = '<div class="form-group">';
+            if (Countlistbible <= 1) {
+                // alert("เเถวเเรก");
+                bibletitle += '<label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>'
+                                +'<span class="br-hymn"><br></span>'
+                                +'<label class="bible-set-one">弗</label>'
+                                +'<label class="bible-set-one">ENG</label>'
+                                +'<label class="bible-set-one">1:</label>'
+                                +'<label class="bible-set-one">15-23</label>';
+            }else if (Countlistbible > 1) {
+                // alert("เเถว1+");
                 bibletitle += '<label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>'
                                 +'<label class="bible-set-two">弗</label>'
                                 +'<label class="bible-set-two">ENG</label>'
                                 +'<label class="bible-set-two">1:</label>'
-                                +'<label class="bible-set-two">15-23</label>'
-                            +'</div>';
+                                +'<label class="bible-set-two">15-23</label>';
+            }
+                // bibletitle += '<label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>'
+                //                 +'<label class="bible-set-two">弗</label>'
+                //                 +'<label class="bible-set-two">ENG</label>'
+                //                 +'<label class="bible-set-two">1:</label>'
+                //                 +'<label class="bible-set-two">15-23</label>';
+            bibletitle += '</div>';
 
             var numernicid = Math.floor(Math.random() * 1000001);
             var html = '<div id="'+(numernicid)+'">' ;
@@ -308,7 +314,7 @@
                     +'<div class="row bible-none" id="'+ (numernicid + 2) +'" >'
                         +'<div class="col-lg-12">'
                             +'<div class="row">'
-                                +'<div class="col-lg-9 ">'
+                                +'<div class="col-lg-9 bible-cen">'
                                     + bibletitle
                                     // +'<div class="form-group">'
                                     //     +'<label>sss</label>'
@@ -334,10 +340,9 @@
             // console.log(numernicid);
             // console.log(Countlistbible);
             ++Countlistbible;
-            console.log(Countlistbible);
+            // console.log(Countlistbible);
 
         }
-
         onclickaddbible();
 
     </script>
