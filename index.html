@@ -133,7 +133,7 @@
         var idhymnclose = 'hymnid-';
         var Countnumberhymn = 0;
         var Countlistbible = 1;
-        var bibletitle = '';
+        // var bibletitle = '';
 
         // var iex = 0;
         // function buttonClicktest() {
@@ -164,17 +164,22 @@
         console.log(testone);
         console.log(exvalue);
 
-        function setshowbible(numberCount,numset){
+        function setshowbible(numberCount,numset,Countbible){
             // var bibletitle = '<div class="form-group">';
             // console.log(Countlistbible);
             // console.log(numberCount);
+            var result = numset + 4;
             console.log(numset);
+            var ex123 = '"#'+ result +'"';
+            console.log(ex123);
             if (numberCount > 1) {
                 // alert("ผิด");
                 bibletitle = ''
             }
-            else if ((numberCount <= 1) && (Countlistbible <= 1)){
+            else if ((numberCount <= 1) && (Countbible <= 1)){
                 // alert("ถูก");
+                var numsetid = '#'+result;
+                var bibletitle = '';
                 bibletitle += '<div class="form-group">'
                                 +'<label class="bible-set-one">ฉบับหนึ่ง</label>'
                                 +'<label class="bible-set-one">弗</label>'
@@ -183,9 +188,15 @@
                                 +'<label class="bible-set-one">1:</label>'
                                 +'<label class="bible-set-one">15-23</label>'
                             +'</div>';
+                // document.getElementById(numset+4).append(bibletitle);
+                // document.getElementById(numset+4).append(222222);
+                // document.getElementById(numset+4).innerHTML = bibletitle;
+
+                $(numsetid).append(bibletitle);
             }
-            else if ((numberCount <= 1) && (Countlistbible > 1)){
+            else if ((numberCount <= 1) && (Countbible > 1)){
                 // alert("ถูก 2");
+                var bibletitle = '';
                 bibletitle += '<div class="form-group">'
                                 +'<label class="bible-set-two">ฉบับสอง</label>'
                                 +'<label class="bible-set-two">弗</label>'
@@ -193,10 +204,12 @@
                                 +'<label class="bible-set-two">10:</label>'
                                 +'<label class="bible-set-two">15-38</label>'
                             +'</div>';
+                // document.getElementById(numset+4).append(bibletitle);
             }
             
             // console.log(bibletitle);
-            return bibletitle;
+
+            // return bibletitle;
 
             // if (Countlistbible <= 1) {
             //     bibletitle += '<div class="form-group">'
@@ -396,11 +409,13 @@
             //     //                 +'<label class="bible-set-two">15-23</label>';
             // bibletitle += '</div>';
             // console.log(Countlistbible);
-            
+
             var numernicid = Math.floor(Math.random() * 10000001);
-                bibletitle = setshowbible(1,numernicid);
+                // bibletitle = setshowbible(1,numernicid);
                 // setshowbible(1);
                 // bibletitle = '';
+                setshowbible(1,numernicid,Countlistbible);
+                // document.getElementById(numernicid+4).append(setshowbible(1,numernicid,Countlistbible));
 
             var html = '<div id="'+(numernicid)+'">' ;
 
@@ -445,7 +460,8 @@
                         +'<div class="col-lg-12">'
                             +'<div class="row">'
                                 +'<div class="col-lg-9 bible-cen">'
-                                    + bibletitle 
+                                    + '<span id="'+ (numernicid + 4) +'"></span>'
+                                    // + bibletitle 
                                     // s+ testone
                                     // +'<span id="'+ (numernicid + 3) +'"></span>'
                                     // +'<div class="form-group">'
