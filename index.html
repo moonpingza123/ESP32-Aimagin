@@ -86,6 +86,7 @@
         var Countnumberhymn = 0;
         var Countlistbible = 1;
         // var bibletitle = '';
+        var bibletitle = '<div class="form-group">';
 
         // var iex = 0;
         // function buttonClicktest() {
@@ -97,87 +98,73 @@
         //     --Countnumberhymn;
         // }
 
-        var exvalue = '123';
-        function extestvalue(){
-            var testvalue = exvalue ;
-                testvalue = '321';
-            return testvalue ;
-        }
-        var testone = extestvalue();
-        console.log(testone);
-        console.log(exvalue);
+        // var exvalue = '123';
+        // function extestvalue(){
+        //     var testvalue = exvalue ;
+        //         testvalue = '321';
+        //     return testvalue ;
+        // }
+        // var testone = extestvalue();
+        // console.log(testone);
+        // console.log(exvalue);
 
-        function setshowbible(numberCount,numset,Countbible){
+        // function setshowbible(numberCount,numset,Countbible){
+        function setshowbible(numset){
             var result = numset + 4;
-            console.log(numset);
-            var ex123 = '"#'+ result +'"';
-            console.log(ex123);
-            if (numberCount > 1) {
-                // alert("ผิด");
-                bibletitle = ''
-            }
-            else if ((numberCount <= 1) && (Countbible <= 1)){
+            // console.log(numset);
+            // var ex123 = '"#'+ result +'"';
+            // console.log(ex123);
+
+            // if (numberCount > 1) {
+            //     // alert("ผิด");
+            //     bibletitle = ''
+            // }
+            // else if ((numberCount <= 1) && (Countbible <= 1)){
+            if (Countlistbible <= 1){
                 // alert("ถูก");
-                var numsetid = '#'+result;
-                var bibletitle = '';
-                bibletitle += '<div class="form-group">'
+                // var numsetid = '#'+result;
+                // var bibletitle = '<div class="form-group">';
+                bibletitle += '<span id="'+ (result) +'">'
                                 +'<label class="bible-set-one">ฉบับหนึ่ง</label>'
                                 +'<label class="bible-set-one">弗</label>'
                                 +'<label class="bible-set-one">ENG</label>'
                                 +'<span class="br-hymn"><br></span>'
                                 +'<label class="bible-set-one">1:</label>'
                                 +'<label class="bible-set-one">15-23</label>'
-                            +'</div>';
-                // document.getElementById(numset+4).append(bibletitle);
+                            +'</span>';
+                // document.getElementById(numsetid).append(bibletitle);
                 // document.getElementById(numset+4).append(222222);
                 // document.getElementById(numset+4).innerHTML = bibletitle;
 
-                $(numsetid).append(bibletitle);
+                // $('"'+numsetid+'"').append(bibletitle);
             }
-            else if ((numberCount <= 1) && (Countbible > 1)){
+            // else if ((numberCount <= 1) && (Countbible > 1)){
+            else if (Countlistbible > 1){
                 // alert("ถูก 2");
-                var bibletitle = '';
-                bibletitle += '<div class="form-group">'
+                // var bibletitle = '';
+                bibletitle += '<span id="'+ (result) +'">'
                                 +'<label class="bible-set-two">ฉบับสอง</label>'
                                 +'<label class="bible-set-two">弗</label>'
                                 +'<label class="bible-set-two">ENG</label>'
                                 +'<label class="bible-set-two">10:</label>'
                                 +'<label class="bible-set-two">15-38</label>'
-                            +'</div>';
+                            +'</span>';
                 // document.getElementById(numset+4).append(bibletitle);
             }
             
             // console.log(bibletitle);
 
-            // return bibletitle;
-
-            // if (Countlistbible <= 1) {
-            //     bibletitle += '<div class="form-group">'
-            //                     +'<label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>'
-            //                     +'<label class="bible-set-one">พงศาวดารกษัตริย์ฉบับสอง</label>'
-            //                     +'<span class="br-hymn"><br></span>'
-            //                     +'<label class="bible-set-one">弗</label>'
-            //                     +'<label class="bible-set-one">ENG</label>'
-            //                     +'<label class="bible-set-one">1:</label>'
-            //                     +'<label class="bible-set-one">15-23</label>';
-            // }else if (Countlistbible > 1) {
-            //     bibletitle += '<div class="form-group">'
-            //                     +'<label class="bible-set-two">พงศาวดารกษัตริย์ฉบับสอง</label>'
-            //                     +'<label class="bible-set-two">弗</label>'
-            //                     +'<label class="bible-set-two">ENG</label>'
-            //                     +'<label class="bible-set-two">1:</label>'
-            //                     +'<label class="bible-set-two">15-23</label>';
-            // }
+            return bibletitle;
         }
         // var bibletitle = setshowbible();
         
-        function createbibleset(numset,ex){
+        function createbibleset(numset){
             // console.log(bibletitle);
 
             // setshowbible();
 
             // return bibletitle ;
-            console.log(ex);
+            // console.log(ex);
             bibletitle = setshowbible(1,numset);
             // console.log(bibletitle);
 
@@ -190,13 +177,16 @@
         }
 
         function updatebibleset(numset){
-            bibletitle = setshowbible(2,numset);
+            var result = numset + 4;
+
+            // bibletitle = setshowbible(2,numset);
             // console.log(bibletitle);
+            // document.getElementById(result).remove();
 
             document.getElementById(numset+1).style.display = "block";
             document.getElementById(numset+2).style.display = "none";
 
-            return bibletitle;
+            // return bibletitle;
             // bibletitle = '';
             // return bibletitle;
             // console.log(bibletitle);
@@ -320,7 +310,7 @@
                 // bibletitle = setshowbible(1,numernicid);
                 // setshowbible(1);
                 // bibletitle = '';
-                setshowbible(1,numernicid,Countlistbible);
+                bibletitle = setshowbible(numernicid);
                 // document.getElementById(numernicid+4).append(setshowbible(1,numernicid,Countlistbible));
 
             var html = '<div id="'+(numernicid)+'">' ;
@@ -356,7 +346,7 @@
                                 +'</div>'
                                 +'<div class="col-lg-3 ">'
                                     +'<div class="form-group">'
-                                        +'<button type="button" class="btn btn-outline-success" onclick="createbibleset('+ numernicid +','+ 58147406 +')"><i class="fa fa-floppy-o"></i></button>'
+                                        +'<button type="button" class="btn btn-outline-success" onclick="createbibleset('+ numernicid +')"><i class="fa fa-floppy-o"></i></button>'
                                     +'</div>'
                                 +'</div>'
                             +'</div>'
@@ -366,14 +356,15 @@
                         +'<div class="col-lg-12">'
                             +'<div class="row">'
                                 +'<div class="col-lg-9 bible-cen">'
-                                    + '<span id="'+ (numernicid + 4) +'"></span>'
-                                    // + bibletitle 
+                                    // + '<span id="'+ (numernicid + 4) +'"></span>'
+                                    + bibletitle 
                                     // s+ testone
                                     // +'<span id="'+ (numernicid + 3) +'"></span>'
                                     // +'<div class="form-group">'
                                     //     +'<label>sss</label>'
                                     //     +'<label>sss</label>'
                                     //     +'<label>sss</label>'
+                                    +'</div>'
                                 +'</div>'
                                 +'<div class="col-lg-3 ">'
                                     +'<div class="form-group">'
