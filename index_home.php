@@ -9,6 +9,7 @@
 </head>
 <body>
 	<?php
+
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
@@ -69,10 +70,10 @@
    		var ex3 = "<?php echo $str ?>";
    		console.log(ex3);
 
-   		123
     }
 
 </script>
 <br><span>123456</span>
+
 </body>
 </html>
