@@ -43,32 +43,33 @@
 <script type="text/javascript">
 
 	function buttonClicktest(){
-   //      <?php 
+        <?php 
 
-   //      	$sql = "SELECT BibleID, BibleTHName, BibleTHInitialsName FROM bible";
-			// $result = $conn->query($sql);
+        	$sql = "SELECT BibleID, BibleTHName, BibleTHInitialsName FROM bible";
+			$result = $conn->query($sql);
 
-			// if ($result->num_rows > 0) {
-			//     // output data of each row
-			//     while($row = $result->fetch_assoc()) {
-			//         // echo "id: " . $row["BibleID"]. " - Name: " . $row["BibleTHName"]. " " . $row["BibleTHInitialsName"]. "<br>";
-			//         ?>
+			if ($result->num_rows > 0) {
+			    // output data of each row
+			    while($row = $result->fetch_assoc()) {
+			        // echo "id: " . $row["BibleID"]. " - Name: " . $row["BibleTHName"]. " " . $row["BibleTHInitialsName"]. "<br>";
+			        ?>
+			        var ex1 = "<?php echo $row["BibleTHName"] ?>";
+			        console.log(ex1);
+			       	var ex3 = "<?php echo $str ?>";
+			        console.log(ex3);
+			        // console.log(ex3);
 
-			//        
-			//         console.log(ex1);
-			//         // console.log(ex3);
+			        <?php
+			    }
+			} else {
+			    echo "0 results";
+			}
 
-			//         <?php
-			//     }
-			// } else {
-			//     echo "0 results";
-			// }
+			$conn->close();
+        ?>
 
-			// $conn->close();
-   //      ?>
-
-   		var ex3 = "<?php echo $str ?>";
-   		console.log(ex3);
+   		// var ex3 = "<?php echo $str ?>";
+   		// console.log(ex3);
 
     }
 
